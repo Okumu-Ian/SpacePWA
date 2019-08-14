@@ -1,0 +1,14 @@
+{
+    "name": "Space-Share",
+    "short_name": "Spaceshare",
+    "description": "Welcome to SpaceShare. Find All your space needs sorted here.",
+    "start_url": "/",
+    "background_color": "#3f51b5",
+    "theme_color": "#3f51b5",
+    "display" : "standalone",
+    "icons": [{
+      "src": "https://img.icons8.com/nolan/96/000000/room.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }]
+  }

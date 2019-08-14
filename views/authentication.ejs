@@ -1,0 +1,173 @@
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link  rel="stylesheet" href="../public/styles/authentication.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="../public/scripts/authentication.js"></script>
+        <link rel="manifest" href="../manifest.json" />
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    </head>
+<body class="grey lighten-3">
+
+        <div id="logo-with-name" class="col s12 center-align" style="margin-top: 0px;">
+                <img src="https://img.icons8.com/nolan/96/000000/room.png">
+                <h4 style="margin-top: -10px;"><%= pageTitle\%></h4>
+            </div>
+
+<div class="container" style="margin-bottom: 5%;">  
+  <div class="row">
+      <form action="/registerLogin" method="POST">
+        <div class="row">
+         
+            <div class="col s12 m6 offset-m3">
+                <div class="wrapper" id="wp">
+                  <div class="iwrapper" id="iwp">  
+                  <div class="card center-align mg front" id="login-card">
+                    
+                      <div class="card-content" id="card-content">
+                          <span class="card-title">Login</span>
+                           <a class="btn-floating halfway-fab waves-effect waves-light indigo" id="bt"><i class="material-icons">add</i></a>
+      
+                          <div class="input-field" style="margin-top: 5%;">
+                              <input id="email-login" type="email" class="validate">
+                              <label for="email-login">Email</label>
+                          </div>
+                          <div class="input-field" >
+                              <input id="password-login" type="password" class="validate">
+                              <label for="password-login">Password</label>
+                            
+                          </div>
+
+                          <input name="userID" id="userID" hidden/>
+
+                          <button class="btn indigo waves-effect waves-light" type="submit" onclick="loginUser()"  style="margin-top: 5%;">Submit
+                              <i class="material-icons right">send</i>
+                          </button>
+                      </div><!--card-content-->
+                     
+                    </div>   <!--card-->   
+                      <div class="card center-align mg back" id="register-card">
+                    
+                      <div class="card-content" id="card-content">
+                          <span class="card-title indigo">Registration</span>
+                           <a class="btn-floating halfway-fab waves-effect waves-light indigo" id="bt2"><i class="material-icons">close</i></a>
+                          <div class="input-field" style="margin-top: 10%;">
+                              <input id="name" type="text" class="validate">
+                              <label for="name">Name</label>
+                          </div>
+                          <div class="input-field" >
+                              <input id="email" type="email" class="validate">
+                              <label for="email">Email</label>
+                            
+                          </div>
+                           <div class="input-field" >
+                              <input id="password" type="password" class="validate">
+                              <label for="password">Password</label>
+                            
+                          </div>
+                           <div class="input-field" >
+                              <input id="password-confirm" type="password" class="validate">
+                              <label for="password-confirm">Confirm Password</label>
+                            
+                          </div>
+
+                          <button class="btn  indigo waves-effect waves-light"  onclick="createUser()" style="margin-top: 5%;">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                        
+                      </div>
+                     
+                    </div>   
+                    </div> 
+                    </div> 
+                  </div> 
+            </div> 
+      </form>  
+  
+  </div>
+</div>
+<style>
+        .input-field input:focus + label{
+             color: indigo !important;
+        }
+        .input-field input:focus{
+          border-bottom: 1px solid indigo !important;
+          box-shadow: 0 1px 0 0 indigo !important;
+          outline: 2px indigo;
+        }
+</style>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDXbnq_lyqj06XsZ_LjXUEsqxaYL3AjWH4",
+    authDomain: "spaceshare-253b9.firebaseapp.com",
+    databaseURL: "https://spaceshare-253b9.firebaseio.com",
+    projectId: "spaceshare-253b9",
+    storageBucket: "",
+    messagingSenderId: "284878521986",
+    appId: "1:284878521986:web:3914bf6fa90616c1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  if(firebase.auth().currentUser != null){
+    firebase.auth().signOut();
+  } else{
+    console.log("No Current User");
+  }
+
+  function createUser(){
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      console.log(email+","+password);
+
+
+      firebase.auth().createUserWithEmailAndPassword(email,password)
+        .catch((err) => {
+            var errorCode  = err.code;
+            var errorMessage = err.message;
+            console.log(errorCode,errorMessage);
+        });
+        document.getElementById('userID').value = firebase.auth().currentUser.uid;
+  }
+
+  function loginUser() {
+    var email = document.getElementById("email-login").value;
+    var password = document.getElementById("password-login").value;
+
+      firebase.auth().signInWithEmailAndPassword(email,password)
+        .catch((err) => {
+            var errorCode  = err.code;
+            var errorMessage = err.message;
+            console.log(errorCode,errorMessage);
+        });
+
+        document.getElementById('userID').value = firebase.auth().currentUser.uid;
+        firebase.auth().onAuthStateChanged( (user)=> {
+            if(user){
+              var userID = user.uid();
+              var parameters = {UID: userID};
+            }else{
+
+            }
+        });
+  }
+</script>
+</body>
+</html>

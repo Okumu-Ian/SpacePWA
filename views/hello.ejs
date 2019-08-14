@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+<title><%=  message%></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="manifest" href="manifest.json" />
+</head>
+
+<body class="grey lighten-3">
+    <div class="navbar-fixed">
+      <nav class="indigo">
+        <a href="#" class="sidenav-trigger" data-target="home-sidenav"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="authentication">Login</a></li>
+          <li><a href="authentication">Register</a></li>
+          <li><a href="#hostModal" class="modal-trigger">Host</a></li>
+          <li><a href="#">Find Space</a></li>
+        </ul>
+      </nav>
+    </div>
+<div id="logo-with-name" class="col s12 center-align" style="margin-top: 20px;">
+    <img src="https://img.icons8.com/nolan/96/000000/room.png">
+    <h4 style="margin-top: -10px;">SpaceShare</h4>
+</div>
+<div>
+    <p class="center-align" style="margin-top: -10px;">
+      Here at SpaceShare, we believe anything you want in terms of space, we got yo covered. <br>
+       Anything ranging from parking,storage and venues.
+    </p>
+</div>
+<div class="container" style="margin-top: 60px;">
+<div class="row center-align">
+<div class="">
+<div class="input-field center-align" id="home-search-div">
+  <input id="home-search" type="text">
+  <label for="home-search">Find Space...</label>
+</div>
+</div>
+</div>
+</div>
+<div class="center-align" style="margin-top: -15px; padding: 5px;">
+<a href="/explore" class="btn indigo">Explore</a>
+<div>
+
+<style>
+#home-search-div input:focus + label{
+     color: indigo !important;
+}
+#home-search-div input:focus{
+  border-bottom: 1px solid indigo !important;
+  box-shadow: 0 1px 0 0 indigo !important;
+  outline: 2px indigo;
+}
+</style>
+</div>
+
+
+<div class="row" style="margin-top: 5%;">
+<div class="col s3">
+  <h4 class="h4">Featured Spaces</h4>
+</div>
+<div class="col s3">
+  </div>
+  <div class="col s3">
+    </div>
+    <div class="col s3">
+      </div>
+</div>
+
+<div class="row">
+
+<div class="col s3 m3">
+    <div class="card">
+        <div class="card-image">
+          <img class="crop" src="https://images.unsplash.com/photo-1526626607369-f89fe1ed77a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+          <span class="card-title">Rio De Janiero</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Fire Up</a>
+        </div>
+      </div>
+</div>
+
+<div class="col s3 m3">
+    <div class="card">
+        <div class="card-image">
+          <img class="crop" src="https://images.unsplash.com/photo-1526626607369-f89fe1ed77a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+          <span class="card-title">Safari MotoMoto</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Twende</a>
+        </div>
+      </div>
+
+</div>
+
+<div class="col s3 m3">
+    <div class="card">
+        <div class="card-image">
+          <img class="crop" src="https://images.unsplash.com/photo-1534606313198-71c1c92ca9e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+          <span class="card-title">Awesome Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Explore This</a>
+        </div>
+      </div>
+
+</div>
+
+<div class="col s3 m3">
+    <div class="card">
+        <div class="card-image">
+          <img class="crop" src="https://images.unsplash.com/photo-1539720473538-74cabbc4f113?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+          <span class="card-title">Destination Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Explore This</a>
+        </div>
+      </div>
+
+</div>
+
+</div>
+
+
+<div class="row" style="margin-top: 5%;">
+    <div class="col s4">
+      <h4 class="h4">Recommended For You</h4>
+    </div>
+    <div class="col s4">
+      </div>
+      <div class="col s4">
+        </div>
+    </div>
+    <div class="carousel" style="margin-top: -50px; margin-bottom: 5%">
+        <a class="carousel-item" href="#one!"><img class="crop" src="https://images.pexels.com/photos/2055100/pexels-photo-2055100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">Bangkok, Thailand</a>
+        <a class="carousel-item" href="#two!"><img class="crop" src="https://images.pexels.com/photos/2055100/pexels-photo-2055100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">Rio, Brazil</a>
+        <a class="carousel-item" href="#three!"><img class="crop" src="https://images.pexels.com/photos/2055100/pexels-photo-2055100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">Masaai Mara, Kenya</a>
+        <a class="carousel-item" href="#four!"><img class="crop" src="https://images.pexels.com/photos/2055100/pexels-photo-2055100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">Grange Park</a>
+        <a class="carousel-item" href="#five!"><img class="crop" src="https://images.pexels.com/photos/2055100/pexels-photo-2055100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">Dead Sea, Israel</a>
+      </div>
+    <script type="text/javascript">
+     $('.carousel').carousel();
+    </script>
+    
+
+<style>
+  .crop{
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+  }
+  .h4{
+    color: indigo;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+
+<div id="hostModal" class="modal" style="padding: 1%;">
+<div class="modal-content">
+  <form action="/host_space" method="POST" id="host_space">
+    <h5 style="margin-top: -5px;">Hey There. Seems you have a space to share.</h5>
+    <div class="input-field" style="margin-top: 5%;">
+    <input type="text" id="space-name" class="space-name" name="spaceName"/>
+    <label for="space-name">Give your space a Name</label>
+    </div>
+
+    <div class="input-field" style="margin-top: 5%;">
+        <input type="text" id="space-description" class="space-description" name="spaceDescription"/>
+        <label for="space-description">Describe What You are Hosting..</label>
+     </div>
+
+<div class="row">
+<div class="input-field col s6">
+    <input type="email" id="space-email" class="space-email" name="spaceEmail"/>
+    <label for="space-email">An Email to contact you.</label>
+</div>
+
+<div class="col s0">
+  </div>
+
+<div class="input-field col s6">
+    <input type="text" id="space-phone" class="space-phone" name="spacePhone"/>
+    <label for="space-phone">Your visitors need to call you</label>
+  </div>
+
+  <div class="input-field" hidden>
+    <input id="fileStorage" name="fileStorageURL" hidden/>
+  </div>
+
+</div>
+
+<div class = "row">
+  <div class = "file-field input-field">
+     <div class = "btn indigo">
+        <span>Browse</span>
+        <input type = "file" name="spaceImages" id="spaceImages"/>
+     </div>
+     
+     <div class = "file-path-wrapper">
+        <input class = "file-path validate" type = "text"
+           placeholder = "Upload stunning photos of your space" />
+     </div>
+  </div>    
+</div>
+  </form>
+
+  <div class="row">
+    <div class="col s2"></div>
+    <div class="col s2"></div>
+    <div class="col s2"></div>
+    <div class="col s2"></div>
+    <div class="col s2">
+        <button class="btn indigo" id="begin_button">Begin</button>
+    </div>
+    <div class="col s2">
+      <button class="btn red" id="cancel-button" onclick="cancelModal()">Cancel</button>
+    </div>
+    </div>
+    
+
+<div>
+</div>
+</div>
+</div>
+
+<script>
+ $(document).ready(function(){
+    $('.modal').modal();
+
+  });
+
+  function cancelModal(){
+    $('.modal').modal();
+  }
+</script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDXbnq_lyqj06XsZ_LjXUEsqxaYL3AjWH4",
+    authDomain: "spaceshare-253b9.firebaseapp.com",
+    databaseURL: "https://spaceshare-253b9.firebaseio.com",
+    projectId: "spaceshare-253b9",
+    storageBucket: "gs://spaceshare-253b9.appspot.com",
+    messagingSenderId: "284878521986",
+    appId: "1:284878521986:web:3914bf6fa90616c1"
+  };
+  // Initialize Firebase
+ const app =  firebase.initializeApp(firebaseConfig);
+
+
+
+
+
+  function generateSerial(len) {
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+    var string_length = 10;
+    var randomstring = '';
+
+    for (var x=0;x<string_length;x++) {
+
+        var letterOrNumber = Math.floor(Math.random() * 2);
+        if (letterOrNumber == 0) {
+            var newNum = Math.floor(Math.random() * 9);
+            randomstring += newNum;
+        } else {
+            var rnum = Math.floor(Math.random() * chars.length);
+            randomstring += chars.substring(rnum,rnum+1);
+        }
+
+    }
+    return(randomstring);
+}
+
+$("#begin_button").click(
+  function(){
+    sendData();
+    document.getElementById('host_space').submit();
+    console.log("Reached Here");
+  });
+
+function sendData(){
+var timespamp = Number(new Date());
+var value_of_image_location = timespamp.toString()+"*"+generateSerial(5);
+var storageRef = firebase.storage().ref(value_of_image_location);
+var file_data = $('#spaceImages').prop('files')[0];
+storageRef.put(file_data);
+document.getElementById('fileStorage').value = value_of_image_location;
+}
+
+</script>
+
+
+<footer class="page-footer indigo">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">SpaceShare</h5>
+                <p class="grey-text text-lighten-4">Here at Spaceshare we care about you. We are motivated by the feedback you give us.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Talk To Us</h5>
+                <ul>
+                  <li>
+                    <a class="grey-text text-lighten-3" href="#!">About US</a></li>
+                  <li>
+                    <a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                  <!-- <li>
+                    <a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li>
+                    <a class="grey-text text-lighten-3" href="#!">Twitter</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <%= copyright%>
+            </div>
+          </div>
+        </footer>
+
+
+</body>
+
+</html>
